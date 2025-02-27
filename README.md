@@ -4,7 +4,7 @@
 
 ### Running this project
 
-1. `temporal server start-dev` to start [Temporal Server](https://github.com/temporalio/cli/#installation).
+1. `npm run server` to start [Temporal Server](https://github.com/temporalio/cli/#installation).
 1. `npm install` to install dependencies.
 1. `npm run watch` to start the Worker.
 1. In another shell, `npm run workflow` to run the Workflow Client.
@@ -18,6 +18,10 @@ You need to create a .env file (see .env.sample). This is needed to load the env
 
 - OpenAI key
 - Google Maps API key
+
+### Running Tests
+
+`npm run test`
 
 ### Developer
 

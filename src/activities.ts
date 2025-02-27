@@ -4,7 +4,7 @@ import { deliverNotification } from './util/send-message';
 import { fetchTrafficDelay } from './util/fetch-traffic-delay';
 
 // Step 1:  Fetch traffic data
-export async function getTrafficDelay(origin: string, destination: string): Promise<number | undefined> {
+export async function getTrafficDelay(origin: string, destination: string): Promise<number | null> {
   try {
     const delayTimeInMinutes = await fetchTrafficDelay(origin, destination);
 
@@ -13,6 +13,7 @@ export async function getTrafficDelay(origin: string, destination: string): Prom
     return delayTimeInMinutes;
   } catch (error) {
     console.error('Error fetching traffic data:', error);
+    return null;
   }
 }
 
@@ -42,8 +43,9 @@ export async function generateMessage(origin: string, destination: string, delay
 export async function sendMessage(message: string): Promise<string> {
   try {
     await deliverNotification(message);
-    console.log(`Notification sent: ${message}`);
-    return `Notification sent: ${message}`;
+    const response = `Notification sent: \n ${message}`;
+    console.log('Notification sent');
+    return response;
   } catch (err) {
     console.error(`Error in sending notification:`, err);
     return 'Failed to send notification. Please try again later.';

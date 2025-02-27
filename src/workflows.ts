@@ -20,7 +20,7 @@ export async function trafficWorkflow(origin: string, destination: string): Prom
     }
 
     // Delay is not greater than threshold
-    return 'Delay is under the threshold';
+    return 'Notification skipped because delay is under the threshold';
   } catch (err) {
     console.error('Error in traffic workflow:', err);
     return 'Failed to process request. Please try again later.';

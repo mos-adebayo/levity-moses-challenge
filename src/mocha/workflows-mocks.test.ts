@@ -64,6 +64,6 @@ describe('traffic workflow with mocks', () => {
         taskQueue,
       }),
     );
-    assert.equal(result, 'Delay is under the threshold');
+    assert.equal(result, 'Notification skipped because delay is under the threshold');
   });
 });

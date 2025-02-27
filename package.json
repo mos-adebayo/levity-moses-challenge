@@ -1,5 +1,5 @@
 {
-  "name": "temporal-hello-world",
+  "name": "levity-moses",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
+    "server": "temporal server start-dev",
     "start": "ts-node src/worker.ts",
     "watch": "nodemon src/worker.ts",
     "workflow": "ts-node src/client.ts",
